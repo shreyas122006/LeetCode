@@ -1,0 +1,28 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        StringBuilder filtered = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                filtered.append(Character.toLowerCase(c));
+            }
+        }
+
+        int left = 0, right = filtered.length() - 1;
+        while (left < right) {
+            if (filtered.charAt(left) != filtered.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Solution S = new Solution();
+        System.out.println(S.isPalindrome("A man, a plan, a canal: Panama")); 
+        System.out.println(S.isPalindrome("race a car")); 
+        System.out.println(S.isPalindrome(" "));
+    }
+}
