@@ -1,0 +1,63 @@
+class NumArray {
+    static int tree[];
+    static int nums[];
+    static int n;
+    public NumArray(int[] nums) {
+        this.nums = nums;
+        this.n = nums.length;
+        tree = new int[4*n];
+        if(n>0) {
+            buildST(nums,0,0,n-1);
+        }
+    }
+    public int buildST(int[] nums, int i, int si, int sj) {
+        if(si==sj) {
+            tree[i] = nums[si];
+            return tree[i];
+        }
+        int mid = (si+sj)/2;
+        buildST(nums,2*i+1,si,mid);
+        buildST(nums,2*i+2,mid+1,sj);
+        tree[i] = tree[2*i+1]+tree[2*i+2];
+        return tree[i];
+    }
+    public void update(int index, int val) {
+        int diff = val - nums[index];
+        nums[index] = val;
+        updateUtil(0,0,n-1,index,diff);
+    }
+    public void updateUtil(int i, int si, int sj, int idx, int diff) {
+        if(idx > sj || idx < si) {
+            return;
+        }
+        tree[i] += diff;
+        if(si!=sj) {
+            int mid = si + (sj-si)/2;
+            updateUtil(2*i+1,si,mid,idx,diff);
+            updateUtil(2*i+2,mid+1,sj,idx,diff);
+        }
+    }
+    
+    public int sumRange(int left, int right) {
+        return sumRangeUtil(0,0,n-1,left,right);
+    }
+    public int sumRangeUtil(int i, int si, int sj, int qi, int qj) {
+        if(si>qj || sj<qi) {
+            return 0;
+        } else if (si>=qi && sj<=qj) {
+            return tree[i];
+        } else {
+            int mid = si + (sj-si)/2;
+            int left = sumRangeUtil(2*i+1,si,mid,qi,qj);
+            int right = sumRangeUtil(2*i+2,mid+1,sj,qi,qj);
+            return left + right;
+        }
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * obj.update(index,val);
+ * int param_2 = obj.sumRange(left,right);
+ */
