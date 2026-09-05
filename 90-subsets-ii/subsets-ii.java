@@ -1,9 +1,7 @@
 class Solution {
     List<List<Integer>> store = new ArrayList<>();
     private void BackTrack(int nums[], int idx, ArrayList<Integer> curr) {
-        if(!store.contains(curr)) {
-            store.add(new ArrayList<>(curr));
-        } 
+        store.add(new ArrayList<>(curr));
         for(int i=idx; i<nums.length; i++) {
             if( i > idx && nums[i] == nums[i-1]) {
                 continue;
