@@ -7,12 +7,12 @@ class Solution {
         int number = 0;
         for(int i=0; i<sb.length(); i++) {
             if(sb.charAt(i) - '0' == 9) {
-                number += 9 * (int)Math.pow(10,n-i);
+                number += 9 *Math.pow(10,n-i);
             } else if(oneTime == false){
                 oneTime = true;
-                number += 9 * (int)Math.pow(10,n-i);
+                number += 9 *Math.pow(10,n-i);
             } else {
-                number += 6 * (int)Math.pow(10,n-i);
+                number += 6 *Math.pow(10,n-i);
             }
         }
         return number;
