@@ -7,6 +7,7 @@ class Solution {
                 max = (char)Math.max(max, num.charAt(i));
             }
         }
-        return max == ' ' ? "" : String.valueOf(max).repeat(3);
+        // return max == ' ' ? "" : String.valueOf(max).repeat(3);
+        return max == ' ' ? "" : "" + max + max + max;
     }
 }
