@@ -1,15 +1,15 @@
 class Solution {
     public int minMovesToCaptureTheQueen(int a, int b, int c, int d, int e, int f) {
-        int Ridx[] = new int[2];
-        int Bidx[] = new int[2];
-        int Qidx[] = new int[2];
-        int min = 0;
-        Ridx[0] = a;
-        Ridx[1] = b;
-        Bidx[0] = c;
-        Bidx[1] = d;
-        Qidx[0] = e;
-        Qidx[1] = f;
+        // int Ridx[] = new int[2];
+        // int Bidx[] = new int[2];
+        // int Qidx[] = new int[2];
+        // int min = 0;
+        // Ridx[0] = a;
+        // Ridx[1] = b;
+        // Bidx[0] = c;
+        // Bidx[1] = d;
+        // Qidx[0] = e;
+        // Qidx[1] = f;
 
         int upLeftCheckB1 = c-1;
         int upLeftCheckB2 = d-1;
