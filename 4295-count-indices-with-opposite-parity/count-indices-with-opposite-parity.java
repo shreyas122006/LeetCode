@@ -6,12 +6,12 @@ class Solution {
         }
         int store[] = new int[n];
         for(int i=0; i<n; i++) {
-            boolean isOdd = false;
-            if(nums[i] % 2 == 1) {
-                isOdd = true;
-            }
+            // boolean isOdd = false;
+            // if(nums[i] % 2 == 1) {
+            //     isOdd = true;
+            // }
             for(int j=i+1; j<n; j++) {
-                if((isOdd && nums[j] % 2 == 0) || (!isOdd && nums[j] % 2 == 1)) {
+                if((nums[i] % 2 == 1 && nums[j] % 2 == 0) || (nums[i] % 2 == 0 && nums[j] % 2 == 1)) {
                     store[i]++;
                 }
             }
