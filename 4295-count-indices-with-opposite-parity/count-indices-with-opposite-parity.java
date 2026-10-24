@@ -11,9 +11,7 @@ class Solution {
                 isOdd = true;
             }
             for(int j=i+1; j<n; j++) {
-                if(isOdd && nums[j] % 2 == 0) {
-                    store[i]++;
-                } else if(!isOdd && nums[j] % 2 == 1) {
+                if((isOdd && nums[j] % 2 == 0) || (!isOdd && nums[j] % 2 == 1)) {
                     store[i]++;
                 }
             }
