@@ -1,11 +1,18 @@
 class Solution {
     private int GCD(int min, int max) {
-        while(max != 0) {
-            int temp = max;
-            max = min % max;
-            min = temp;
+        // while(max != 0) {
+        //     int temp = max;
+        //     max = min % max;
+        //     min = temp;
+        // }
+        // return min;
+        int val = 0;
+        for(int i=1; i<=max; i++) {
+            if(min % i == 0 && max % i == 0) {
+                val = i;
+            }
         }
-        return min;
+        return val;
     }
     public int findGCD(int[] nums) {
         int min = Integer.MAX_VALUE;
