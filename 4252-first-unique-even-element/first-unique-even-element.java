@@ -1,10 +1,11 @@
 class Solution {
     public int firstUniqueEven(int[] nums) {
         int freq[] = new int[101];
-        for(int i=0; i<nums.length; i++) {
+        int n = nums.length;
+        for(int i=0; i<n; i++) {
             freq[nums[i]]++;
         }
-        for(int i=0; i<nums.length; i++) {
+        for(int i=0; i<n; i++) {
             if(freq[nums[i]] == 1 && nums[i] % 2 == 0) {
                 return nums[i];
             }
