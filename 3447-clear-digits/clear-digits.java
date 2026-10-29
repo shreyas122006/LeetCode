@@ -15,11 +15,13 @@ class Solution {
         // return sb.reverse().toString();
         
         StringBuilder sb = new StringBuilder();
-        for(int i=0; i<s.length(); i++) {
-            if(s.length() != 0 && Character.isDigit(s.charAt(i))) {
+        int n = s.length();
+        for(int i=0; i<n; i++) {
+            char curr = s.charAt(i);
+            if(Character.isDigit(curr)) {
                 sb.setLength(sb.length()-1);
             } else {
-                sb.append(s.charAt(i));
+                sb.append(curr);
             }
         }
         return sb.toString();
