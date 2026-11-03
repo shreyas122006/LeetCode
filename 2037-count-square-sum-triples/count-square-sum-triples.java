@@ -4,10 +4,8 @@ class Solution {
         for(int i=0; i<=n; i++) {
             for(int j=i+1; j<=n; j++) {
                 for(int k=j+1; k<=n; k++) {
-                    if(i!=j && j!=k) {
-                        if(i*i + j*j == k*k) {
-                            count+=2;
-                        }
+                    if(i!=j && j!=k && (i*i + j*j == k*k)) {
+                        count+=2;
                     }
                 }
             }
