@@ -33,17 +33,14 @@ class Solution {
         if(n <= 8) {
             return n;
         }
-        if(n <= 16) {
+        else if(n <= 16) {
             return 2*n - 8;
         }
-        if(n <= 24) {
+        else if(n <= 24) {
             return 3*n - 24;
         }
-        if(n <= 26) {
+        else {
             return 4*n - 48;
         }
-        return -1;
-
-        
     }
 }
