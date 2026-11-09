@@ -14,19 +14,36 @@ class Solution {
         // }
         // return -1;
 
+        // int n = word.length();
+        // if(n <= 8) {
+        //     return n;
+        // }
+        // if(n <= 16) {
+        //     return n + (n - 8);
+        // }
+        // if(n <= 24) {
+        //     return n + n - 8 + (n - 16);
+        // }
+        // if(n <= 26) {
+        //     return n + n - 8 + n - 16 + (n - 24);
+        // }
+        // return -1;
+
         int n = word.length();
         if(n <= 8) {
             return n;
         }
         if(n <= 16) {
-            return n + (n - 8);
+            return 2*n - 8;
         }
         if(n <= 24) {
-            return n + n - 8 + (n - 16);
+            return 3*n - 24;
         }
         if(n <= 26) {
-            return n + n - 8 + n - 16 + (n - 24);
+            return 4*n - 48;
         }
         return -1;
+
+        
     }
 }
