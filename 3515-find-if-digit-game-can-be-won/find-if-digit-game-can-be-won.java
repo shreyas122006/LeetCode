@@ -32,6 +32,6 @@ class Solution {
                 Ssum += num;
             }
         }
-        return Ssum == Dsum ? false : true;
+        return Ssum != Dsum;
     }
 }
