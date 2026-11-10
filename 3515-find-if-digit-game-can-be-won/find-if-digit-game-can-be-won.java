@@ -11,16 +11,27 @@ class Solution {
         // }
         // return doubleSum == singleSum ? false : true;
 
-        int total = 0;
+        // int total = 0;
+        // int Dsum = 0;
+        // for(int num : nums) {
+        //     if(num > 9) {
+        //         Dsum += num;
+        //         total += num;
+        //     } else {
+        //         total += num;
+        //     }
+        // }
+        // return total - Dsum == Dsum ? false : true;
+
+        int Ssum = 0;
         int Dsum = 0;
         for(int num : nums) {
             if(num > 9) {
                 Dsum += num;
-                total += num;
             } else {
-                total += num;
+                Ssum += num;
             }
         }
-        return total - Dsum == Dsum ? false : true;
+        return Ssum == Dsum ? false : true;
     }
 }
