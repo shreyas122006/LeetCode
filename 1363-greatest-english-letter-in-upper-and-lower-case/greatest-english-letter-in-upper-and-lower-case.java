@@ -17,18 +17,26 @@ class Solution {
         // }
         // return "";
 
-        boolean upper[] = new boolean[26];
-        boolean lower[] = new boolean[26];
+        // boolean upper[] = new boolean[26];
+        // boolean lower[] = new boolean[26];
+        // char store[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        // for(int i=0; i<s.length(); i++) {
+        //     if(Character.isUpperCase(s.charAt(i))) {
+        //         upper[s.charAt(i) - 'A'] = true;
+        //     } else {
+        //         lower[s.charAt(i) - 'a'] = true;
+        //     }
+        // }
+        // for(int i=25; i>=0; i--) {
+        //     if(upper[i] && lower[i]) {
+        //         return Character.toString(store[i]);
+        //     }
+        // }
+        // return "";
+
         char store[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-        for(int i=0; i<s.length(); i++) {
-            if(Character.isUpperCase(s.charAt(i))) {
-                upper[s.charAt(i) - 'A'] = true;
-            } else {
-                lower[s.charAt(i) - 'a'] = true;
-            }
-        }
         for(int i=25; i>=0; i--) {
-            if(upper[i] && lower[i]) {
+            if(s.indexOf(store[i]) != -1 && s.indexOf(Character.toLowerCase(store[i])) != -1) {
                 return Character.toString(store[i]);
             }
         }
