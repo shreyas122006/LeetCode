@@ -13,9 +13,18 @@ class Solution {
         }
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
+        // for(int i=0; i<n; i++) {
+        //     min = Math.min(min, nums[i]);
+        //     max = Math.max(max, nums[i]);
+        // }
+
         for(int i=0; i<n; i++) {
-            min = Math.min(min, nums[i]);
-            max = Math.max(max, nums[i]);
+            if(min > nums[i]) {
+                min = nums[i];
+            }
+            if(max < nums[i]) {
+                max = nums[i];
+            }
         }
         for(int i=0; i<n; i++) {
             if(nums[i] != min && nums[i] != max) {
